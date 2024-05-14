@@ -1,0 +1,14 @@
+.a{
+  background-color: rgb(255, 255, 255);
+  width: 95%;
+  margin-top: auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.resultadoPrediccion {
+  width: 100%; /* Ancho del textarea al 100% */
+  height: 32rem; /* Altura fija del textarea */
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+  overflow-x: auto; /* Barras de desplazamiento horizontal si el contenido es más ancho que el textarea */
+  overflow-y: auto; /* Barras de desplazamiento vertical si el contenido es más alto que el textarea */
+}

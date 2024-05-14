@@ -1,0 +1,52 @@
+<h1 class="mt-3 text" style="margin-left: 4rem;font-weight: bold;font-size: 30px">Red Neuronal</h1>
+
+<div class="container-fluid a mb-5">
+  <div class="row text-center mt-2">
+    <div class="col-6">
+      <h1  style="font-weight: bold" class="mt-2">Entrenamiento</h1>
+      <input class="form-control" type="file" (change)="onFileSelected($event)">
+      <br>
+      <textarea class="form-control text-center" style="resize: none;" rows="10" [(ngModel)]="fileContent" readonly></textarea>
+      <br>
+      <h3 style="font-weight: bold" >Configuración de Entrenamiento</h3>
+      <form class="row g-3" (submit)="enviarArchivoYParametros($event)">
+        <div class="col-6">
+          <label for="inputAlpha">Alpha</label>
+          <input type="text" class="form-control" id="inputAlpha" name="inputAlpha" placeholder="Función de aprendizaje" [(ngModel)]="alpha">
+        </div>
+        <div class="col-6">
+          <label for="inputBias">Bias</label>
+          <input type="text" class="form-control" id="inputBias" name="inputBias" placeholder="Sesgo" [(ngModel)]="bias">
+        </div>
+        <div class="col-12">
+          <label for="inputEpocas">Épocas</label>
+          <input type="number" class="form-control" id="inputEpocas" name="inputEpocas" placeholder="Número de épocas" [(ngModel)]="epocas">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success w-25">Iniciar Entrenamiento</button>
+        </div>
+        <div class="col-12">
+          <textarea #resultadoTextArea class="w-100 form-control mb-5" style="resize: none; overflow-x: auto; height: 20rem;"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="col-6">
+      <h1  style="font-weight: bold" class="mt-2">Test</h1>
+      <input class="form-control" type="file" (change)="onFileSelected2($event)">
+      <br>
+      <textarea class="form-control text-center" style="resize: none;" rows="10" [(ngModel)]="fileContent2" readonly></textarea>
+      <br>
+      <form class="row g-3" (ngSubmit)="predecir()" #myForm="ngForm">
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Predecir</button>
+        </div>
+        <div class="col-12">
+          <textarea #resultadoPrediccion class="w-100 form-control resultadoPrediccion" style="resize: none; overflow-x: auto; height: 32rem;"></textarea>
+        </div>
+
+      </form>
+
+
+    </div>
+</div>
+</div>
